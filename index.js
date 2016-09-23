@@ -4,18 +4,22 @@ var TelegramBot = require('node-telegram-bot-api'),
         polling: true
     });
 var request = require('request');
-var foods;
+var breakfast;
+var lunch;
+var supper;
 var options = {
     method: 'GET',
     json: true,
-    uri: 'http://localhost:3000/api/notices'
+    uri: 'http://localhost:3000/api/messes'
 }
 request(options, function(error, response, body) {
     if (error)
         console.log(error);
     // else console.log(body[0]);
-    foods = body[0];
-    console.log(foods);
+    breakfast = body[0];
+    lunch = body[1];
+    supper = body[2];
+    console.log(supper);
 });
 
 telegram.on("text", (message) => {
@@ -24,10 +28,9 @@ telegram.on("text", (message) => {
     // get message and respond
     if (message.text.toLowerCase().indexOf("/lunch") === 0) {
         // console.log(foods);
-        var lunchlist = foods.title
+        // var lunchlist = foods.title
         telegram.sendMessage(message.chat.id, "The Menu For Lunch is *" + lunchlist + "*!", {
-          parse_mode: "Markdown"
-
+            parse_mode: "Markdown"
         });
 
     };
