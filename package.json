@@ -18,6 +18,7 @@
   "homepage": "https://github.com/hackrush/messbot#readme",
   "dependencies": {
     "node-telegram-bot-api": "^0.23.3",
+    "request": "^2.75.0",
     "unirest": "^0.5.1"
   }
 }
