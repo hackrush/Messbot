@@ -1,0 +1,22 @@
+{
+  "name": "messbot",
+  "version": "1.0.0",
+  "description": "Check food that are available in your school mess",
+  "main": "index.js",
+  "scripts": {
+    "test": "node indecx.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackrush/messbot.git"
+  },
+  "author": "Denzel Wamburu <denzjoseph@gmail.com> (http://denzel.xyz)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hackrush/messbot/issues"
+  },
+  "homepage": "https://github.com/hackrush/messbot#readme",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.23.3"
+  }
+}
