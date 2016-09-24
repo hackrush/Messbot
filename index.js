@@ -29,11 +29,11 @@ telegram.on("text", (message) => {
         // get message and respond
         if (message.text.toLowerCase().indexOf("breakfast") === 0) {
             var breakfast_list = breakfast;
-            delete _list.type;
-            delete _list.id;
+            delete breakfast_list.type;
+            delete breakfast_list.id;
             // var list = JSON.stringify(_list);
-            var tea;
-            console.log(_list);
+
+            console.log(breakfast_list);
             //status for tea
             if (breakfast_list.tea == true) {
                 tea = "Available"
@@ -200,35 +200,35 @@ telegram.on("text", (message) => {
             var _time = getGreetingTime(moment());
             // console.log(_time);
             if (_time == 'morning') {
-                var _list = breakfast;
-                delete _list.type;
-                delete _list.id;
+                var breakfast_list = breakfast;
+                delete breakfast_list.type;
+                delete breakfast_list.id;
                 // var list = JSON.stringify(_list);
-                var tea;
-                console.log(_list);
+                // var tea;
+                console.log(breakfast_list);
                 //status for tea
-                if (_list.tea == true) {
+                if (breakfast_list.tea == true) {
                     tea = "Available"
                 } else {
                     tea = "Not Available"
                 }
                 // status for coffee
-                if (_list.coffee == true) {
+                if (breakfast_list.coffee == true) {
                     coffee = "Available"
                 } else {
                     coffee = "Not Available"
                 }
-                if (_list.cake == true) {
+                if (breakfast_list.cake == true) {
                     cake = "Available"
                 } else {
                     cake = "Not Available"
                 }
-                if (_list.eggs == true) {
+                if (breakfast_list.eggs == true) {
                     eggs = "Available"
                 } else {
                     eggs = "Not Available"
                 }
-                if (_list.sandwich == true) {
+                if (breakfast_list.sandwich == true) {
                     sandwich = "Available"
                 } else {
                     sandwich = "Not Available"
