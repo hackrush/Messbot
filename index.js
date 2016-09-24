@@ -26,20 +26,71 @@ telegram.on("text", (message) => {
     // console.log(foods);
     telegram.sendMessage(message.chat.id, "We are Working!");
     // get message and respond
-    if (message.text.toLowerCase().indexOf("/lunch") === 0) {
-        // console.log(foods);
-        // var lunchlist = foods.title
-        telegram.sendMessage(message.chat.id, "The Menu For Lunch is *" + lunchlist + "*!", {
+    if (message.text.toLowerCase().indexOf("breakfast") === 0) {
+        var _list = breakfast;
+        delete _list.type;
+        delete _list.id;
+        // var list = JSON.stringify(_list);
+        var tea;
+        console.log(_list);
+        //status for tea
+        if (_list.tea == true) {
+            tea = "Available"
+        } else {
+            tea = "Not Available"
+        }
+        // status for coffee
+        if (_list.coffee == true) {
+            coffee = "Available"
+        } else {
+            coffee = "Not Available"
+        }
+        if (_list.cake == true) {
+            cake = "Available"
+        } else {
+            cake = "Not Available"
+        }
+        if (_list.eggs == true) {
+            eggs = "Available"
+        } else {
+            eggs = "Not Available"
+        }
+        if (_list.sandwich == true) {
+            sandwich = "Available"
+        } else {
+            sandwich = "Not Available"
+        }
+        telegram.sendMessage(message.chat.id, "Breakfast Menu: " + " *TEA* is " + "*" + tea + "*!" +
+            " *Coffee* is " + "*" + coffee + "*!" +
+            " *Cake* is " + "*" + cake + "*!" +
+            " *Eggs* is " + "*" + eggs + "*!" +
+            " *Sandwich* is " + "*" + sandwich + "*!" +
+            "  ", {
+                parse_mode: "Markdown"
+            });
+
+    };
+    if (message.text.toLowerCase().indexOf("lunch") === 0) {
+        var _list = lunch;
+        delete _list.type;
+
+        telegram.sendMessage(message.chat.id, "Breakfast Menu: " + " *TEA* is " + "*" + tea + "*!" +
+            " *Coffee* is " + "*" + coffee + "*!" +
+            " *Cake* is " + "*" + cake + "*!" +
+            " *Eggs* is " + "*" + eggs + "*!" +
+            " *Sandwich* is " + "*" + sandwich + "*!" +
+            "  ", {
             parse_mode: "Markdown"
         });
-
-    };
-    if (message.text.toLowerCase().indexOf("/breakfast") === 0) {
-        telegram.sendMessage(message.chat.id, "We are Working on something for Breakfast");
-
     };
     if (message.text.toLowerCase().indexOf("/supper") === 0) {
-        telegram.sendMessage(message.chat.id, "We are Working on something for Supper");
+        var _list = supper;
+        delete _list.type;
+
+
+        telegram.sendMessage(message.chat.id, "Food Available For Supper are *" + _list + "*!", {
+            parse_mode: "Markdown"
+        });
 
     };
 
