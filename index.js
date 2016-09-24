@@ -24,7 +24,6 @@ request(options, function(error, response, body) {
 
 telegram.on("text", (message) => {
     // console.log(foods);
-    telegram.sendMessage(message.chat.id, "We are Working!");
     // get message and respond
     if (message.text.toLowerCase().indexOf("breakfast") === 0) {
         var _list = breakfast;
@@ -173,7 +172,14 @@ telegram.on("text", (message) => {
             parse_mode: "Markdown"
         });
 
-    };
+    } else {
+      telegram.sendMessage(message.chat.id, "I Didn't Understand you, kindly try *BreakFast*, *Lunch* or *Supper*",
+    {
+parse_mode: "Markdown"
+
+    });
+
+    }
 
 })
 // inline query
@@ -181,10 +187,10 @@ telegram.on("inline_query", (query) => {
   telegram.answerInlineQuery(query.id, [
     {
       type: "article",
-      id: "testarticle",
-      title: "Hello world",
+      id: "breakfast",
+      title: "Show Breakfast Menu",
       input_message_content: {
-        message_text: "Hello, world! This was sent from my super cool inline bot."
+        message_text: "Breakfast"
       }
     }
   ]);
