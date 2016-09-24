@@ -73,22 +73,103 @@ telegram.on("text", (message) => {
     if (message.text.toLowerCase().indexOf("lunch") === 0) {
         var _list = lunch;
         delete _list.type;
+        if (_list.rice == true) {
+            rice = "Available"
+        } else {
+            rice = "Not Available"
+        }
+        // status for coffee
+        if (_list.ugali == true) {
+            ugali = "Available"
+        } else {
+            ugali = "Not Available"
+        }
+        if (_list.tea == true) {
+            cake = "Available"
+        } else {
+            tea = "Not Available"
+        }
+        if (_list.cabbage == true) {
+            cabbage = "Available"
+        } else {
+            cabbage = "Not Available"
+        }
+        if (_list.greengrams == true) {
+            greengrams = "Available"
+        } else {
+            greengrams = "Not Available"
+        }
+        if (_list.beans == true) {
+            beans = "Available"
+        } else {
+            beans = "Not Available"
+        }
+        if (_list.vegstew == true) {
+            vegstew = "Available"
+        } else {
+            vegstew = "Not Available"
+        }
+        telegram.sendMessage(message.chat.id, "Lunch Menu: " + " *Rice* is " + "*" + rice + "*!" +
+            " *Ugali* is " + "*" + ugali + "*!" +
+            " *Beans* is " + "*" + beans + "*!" +
+            " *Greengrams* is " + "*" + greengrams + "*!" +
+            " *Cabbage* is " + "*" + cabbage + "*!" +
+            " *Tea* is " + "*" + tea + "*!" +
+            " *VegStew* is " + "*" + vegstew + "*!" +
 
-        telegram.sendMessage(message.chat.id, "Breakfast Menu: " + " *TEA* is " + "*" + tea + "*!" +
-            " *Coffee* is " + "*" + coffee + "*!" +
-            " *Cake* is " + "*" + cake + "*!" +
-            " *Eggs* is " + "*" + eggs + "*!" +
-            " *Sandwich* is " + "*" + sandwich + "*!" +
-            "  ", {
+            " ", {
             parse_mode: "Markdown"
         });
     };
-    if (message.text.toLowerCase().indexOf("/supper") === 0) {
+    if (message.text.toLowerCase().indexOf("supper") === 0) {
         var _list = supper;
         delete _list.type;
 
+        if (_list.rice == true) {
+            rice = "Available"
+        } else {
+            rice = "Not Available"
+        }
+        // status for coffee
+        if (_list.ugali == true) {
+            ugali = "Available"
+        } else {
+            ugali = "Not Available"
+        }
+        if (_list.tea == true) {
+            cake = "Available"
+        } else {
+            tea = "Not Available"
+        }
+        if (_list.cabbage == true) {
+            cabbage = "Available"
+        } else {
+            cabbage = "Not Available"
+        }
+        if (_list.greengrams == true) {
+            greengrams = "Available"
+        } else {
+            greengrams = "Not Available"
+        }
+        if (_list.beans == true) {
+            beans = "Available"
+        } else {
+            beans = "Not Available"
+        }
+        if (_list.vegstew == true) {
+            vegstew = "Available"
+        } else {
+            vegstew = "Not Available"
+        }
+        telegram.sendMessage(message.chat.id, "Supper Menu: " + " *Rice* is " + "*" + rice + "*!" +
+            " *Ugali* is " + "*" + ugali + "*!" +
+            " *Beans* is " + "*" + beans + "*!" +
+            " *Greengrams* is " + "*" + greengrams + "*!" +
+            " *Cabbage* is " + "*" + cabbage + "*!" +
+            " *Tea* is " + "*" + tea + "*!" +
+            " *VegStew* is " + "*" + vegstew + "*!" +
 
-        telegram.sendMessage(message.chat.id, "Food Available For Supper are *" + _list + "*!", {
+            " ", {
             parse_mode: "Markdown"
         });
 
