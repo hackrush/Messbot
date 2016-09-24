@@ -1,6 +1,6 @@
 var TelegramBot = require('node-telegram-bot-api'),
     // Be sure to replace YOUR_BOT_TOKEN with your actual bot token on this line.
-    telegram = new TelegramBot("276973160:AAGi_I4vVdU3D86zn37kydA3Awars9BMYuM", {
+    telegram = new TelegramBot("292384265:AAHb0UrO6xXLiYe5Ta0AJ7p5lFintxrlPJY", {
         polling: true
     });
 var request = require('request');
@@ -137,7 +137,7 @@ telegram.on("text", (message) => {
             ugali = "Not Available"
         }
         if (_list.tea == true) {
-            cake = "Available"
+            tea = "Available"
         } else {
             tea = "Not Available"
         }
@@ -175,4 +175,17 @@ telegram.on("text", (message) => {
 
     };
 
+})
+// inline query
+telegram.on("inline_query", (query) => {
+  telegram.answerInlineQuery(query.id, [
+    {
+      type: "article",
+      id: "testarticle",
+      title: "Hello world",
+      input_message_content: {
+        message_text: "Hello, world! This was sent from my super cool inline bot."
+      }
+    }
+  ]);
 });
