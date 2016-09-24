@@ -14,4 +14,4 @@
 - [ ] Auto-Send Menu
 
 
-![alt text](https://raw.githubusercontent.com/hackrush/Messbot/master/img/breakfast.png "Demo")
+![alt text](https://raw.githubusercontent.com/hackrush/Messbot/master/img/chat.jpeg "Demo")
