@@ -11,7 +11,7 @@ var supper;
 var options = {
     method: 'GET',
     json: true,
-    uri: 'http://localhost:3000/api/messes'
+    uri: 'http://dekutapp.wamburu.me/api/messes'
 }
 request(options, function(error, response, body) {
     if (error)
